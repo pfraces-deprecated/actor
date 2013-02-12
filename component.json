@@ -1,0 +1,10 @@
+{
+  "name": "actor",
+  "repo": "genjs/actor",
+  "description": "treat DOM nodes as a whole",
+  "version": "0.1.0",
+  "dependencies": {},
+  "scripts": ["index.js"],
+  "keywords": ["actor", "entity"],
+  "license": "MIT"
+}
