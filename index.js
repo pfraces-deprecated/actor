@@ -23,16 +23,16 @@ var Actor = function (pos, members) {
       moveActor(self, pos);
     },
     up: function () {
-      moveActor(self, { self.x, self.y - 1 });
+      moveActor(self, { x: self.x, y: self.y - 1 });
     },
     down: function () {
-      moveActor(self, { self.x, self.y + 1 });
+      moveActor(self, { x: self.x, y: self.y + 1 });
     },
     left: function () {
-      moveActor(self, { self.x - 1, self.y });
+      moveActor(self, { x: self.x - 1, y: self.y });
     },
     right: function () {
-      moveActor(self, { self.x + 1, self.y });
+      moveActor(self, { x: self.x + 1, y: self.y });
     },
   }
 };
