@@ -1,24 +1,24 @@
 var arrayize = require('arrayize');
 
-var actor = module.exports = function (pos, members) {
+module.exports = function (pos, members) {
   return new Actor(pos, members);
 };
 
 var Actor = function (pos, members) {
   var self = this;
-  self.x = pos.x;
-  self.y = pos.y;
-  self.last = {
+  this.x = pos.x;
+  this.y = pos.y;
+  this.last = {
     x: pos.x,
     y: pos.y
   };
 
-  self.members = [];
+  this.members = [];
   arrayize(members).forEach(function (member) {
     addMember(self, member);
   });
 
-  self.move = {
+  this.move = {
     to: function (pos) {
       moveActor(self, pos);
     },
