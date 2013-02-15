@@ -1,6 +1,4 @@
-module.exports = actor;
-
-var actor = function (pos, members) {
+var actor = module.exports = function (pos, members) {
   return new Actor(pos, members);
 };
 
