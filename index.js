@@ -1,3 +1,5 @@
+var arrayize = require('arrayize');
+
 var actor = module.exports = function (pos, members) {
   return new Actor(pos, members);
 };
@@ -12,7 +14,7 @@ var Actor = function (pos, members) {
   };
 
   self.members = [];
-  members.forEach(function (member) {
+  arrayize(members).forEach(function (member) {
     addMember(self, member);
   });
 
