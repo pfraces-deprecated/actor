@@ -57,10 +57,10 @@ Actor.prototype.add = function (member) {
 };
 
 Actor.prototype.act = function (collisionDetecton) {
-  this.last.x = this.x;
-  this.last.y = this.y;
-
   this.actions.each(function (action) {
+    this.last.x = this.x;
+    this.last.y = this.y;
+
     action();
     collisionDetecton();
   });
