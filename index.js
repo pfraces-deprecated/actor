@@ -56,12 +56,13 @@ Actor.prototype.add = function (member) {
   return this;
 };
 
-Actor.prototype.act = function () {
+Actor.prototype.act = function (collisionDetecton) {
   this.last.x = this.x;
   this.last.y = this.y;
 
   this.actions.each(function (action) {
     action();
+    collisionDetecton();
   });
 };
 
