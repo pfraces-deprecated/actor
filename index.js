@@ -47,7 +47,7 @@ var Actor = function (pos, members) {
     right: function () {
       self.x = self.x + 1;
       self.y = self.y;
-    },
+    }
   }
 };
 
