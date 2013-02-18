@@ -25,22 +25,28 @@ var Actor = function (pos, members) {
 
   this.move = {
     to: function (pos) {
-      moveActor(self, pos);
+      self.x = pos.x;
+      self.y = pos.y;
     },
     back: function () {
-      moveActor(self, { x: self.last.x, y: self.last.y });
+      self.x = self.last.x; 
+      self.y = self.last.y;
     },
     up: function () {
-      moveActor(self, { x: self.x, y: self.y - 1 });
+      self.x = self.x;
+      self.y = self.y - 1;
     },
     down: function () {
-      moveActor(self, { x: self.x, y: self.y + 1 });
+      self.x = self.x;
+      self.y = self.y + 1;
     },
     left: function () {
-      moveActor(self, { x: self.x - 1, y: self.y });
+      self.x = self.x - 1; 
+      self.y = self.y;
     },
     right: function () {
-      moveActor(self, { x: self.x + 1, y: self.y });
+      self.x = self.x + 1;
+      self.y = self.y;
     },
   }
 };
@@ -51,6 +57,9 @@ Actor.prototype.add = function (member) {
 };
 
 Actor.prototype.act = function () {
+  this,last.x = this.x;
+  this,last.y = this.y;
+
   this.actions.each(function (action) {
     action();
   });
@@ -62,11 +71,4 @@ var addMember = function (actor, member) {
     x: member.x,
     y: member.y
   });
-};
-
-var moveActor = function (actor, pos) {
-  actor.last.x = actor.x;
-  actor.last.y = actor.y;
-  actor.x = pos.x;
-  actor.y = pos.y;
 };
