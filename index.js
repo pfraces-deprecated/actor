@@ -27,6 +27,9 @@ var Actor = function (pos, members) {
     to: function (pos) {
       moveActor(self, pos);
     },
+    back: function () {
+      moveActor(self, { x: self.last.x, y: self.last.y });
+    },
     up: function () {
       moveActor(self, { x: self.x, y: self.y - 1 });
     },
