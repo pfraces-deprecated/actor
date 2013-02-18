@@ -57,8 +57,8 @@ Actor.prototype.add = function (member) {
 };
 
 Actor.prototype.act = function () {
-  this,last.x = this.x;
-  this,last.y = this.y;
+  this.last.x = this.x;
+  this.last.y = this.y;
 
   this.actions.each(function (action) {
     action();
