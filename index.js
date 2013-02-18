@@ -48,7 +48,7 @@ Actor.prototype.act = function () {
 
 var addMember = function (actor, member) {
   actor.members.push({
-    el: member.el,
+    tile: member.tile,
     x: member.x,
     y: member.y
   });
