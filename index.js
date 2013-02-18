@@ -1,4 +1,5 @@
-var arrayize = require('arrayize');
+var arrayize = require('arrayize'),
+    dictionary = require('dictionary');
 
 module.exports = function (pos, members) {
   return new Actor(pos, members);
@@ -8,6 +9,7 @@ var Actor = function (pos, members) {
   var self = this;
   this.x = pos.x;
   this.y = pos.y;
+  this.actions = dictionary();
 
   this.members = [];
   arrayize(members).forEach(function (member) {
@@ -38,8 +40,10 @@ Actor.prototype.add = function (member) {
   return this;
 };
 
-Action.prototype.action = function (action) {
-  this.action = action;
+Actor.prototype.act = function () {
+  this.actions.each(function (action) {
+    action();
+  });
 };
 
 var addMember = function (actor, member) {
