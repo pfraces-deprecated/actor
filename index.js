@@ -1,5 +1,4 @@
 var uid = require('uid'),
-    arrayize = require('arrayize'),
     dictionary = require('dictionary'),
     xy = require('xy');
 
@@ -9,9 +8,9 @@ module.exports = function (pos, members) {
   return new Actor(pos, members);
 };
 
-var Actor = function (pos, members) {
+var Actor = function (x, y, members) {
   var self = this,
-      pos = xy();
+      pos = xy(x, y);
 
   this.id = id();
 
@@ -20,7 +19,7 @@ var Actor = function (pos, members) {
   this.move = pos.move;
   
   this.members = [];
-  arrayize(members).forEach(function (member) {
+  members && members.forEach(function (member) {
     addMember(self, member);
   });
 
