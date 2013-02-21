@@ -1,5 +1,5 @@
 var uid = require('uid'),
-    dictionary = require('dictionary'),
+    task = require('task'),
     xy = require('xy');
 
 var id = uid();
@@ -23,20 +23,13 @@ var Actor = function (x, y, members) {
     addMember(self, member);
   });
 
-  this.actions = dictionary();
+  this.actions = task();
 };
 
-Actor.prototype.add = function (member) {
-  addMember(this, member);
+Actor.prototype.add = {
+  member: function (member) {
+    addMember(this, member);
   return this;
-};
-
-Actor.prototype.act = function (collisionDetecton) {
-  var self = this;
-  this.actions.each(function (action) {
-    action();
-    collisionDetecton();
-  });
 };
 
 var addMember = function (actor, member) {
