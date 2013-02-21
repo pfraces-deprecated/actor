@@ -26,9 +26,8 @@ var Actor = function (x, y, members) {
   this.actions = task();
 };
 
-Actor.prototype.add = {
-  member: function (member) {
-    addMember(this, member);
+Actor.prototype.add = function (member) {
+  addMember(this, member);
   return this;
 };
 
