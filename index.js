@@ -34,9 +34,6 @@ Actor.prototype.add = function (member) {
 Actor.prototype.act = function (collisionDetecton) {
   var self = this;
   this.actions.each(function (action) {
-    self.last.x = self.x;
-    self.last.y = self.y;
-
     action();
     collisionDetecton();
   });
