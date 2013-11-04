@@ -1,6 +1,6 @@
 # actor
 
-Treat several DOM nodes as a whole one
+Treat several DOM nodes as a whole
 
 ## Install
 
